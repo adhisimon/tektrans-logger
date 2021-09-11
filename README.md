@@ -100,7 +100,7 @@ Here is the list:
 
   // default is "logs" directory on current workdir
   directory: path.join(process.cwd(), 'logs'),
-  
+
   filename: 'log',
 
   // default is using generic level value
@@ -113,6 +113,10 @@ Here is the list:
   max_files: null,
 }
 ```
+
+See [examples/using-config.js](./examples/using-config.js) for
+usage example of using config object.
+
 ## Changelog
 See [CHANGELOG.md](./CHANGELOG.md).
 
