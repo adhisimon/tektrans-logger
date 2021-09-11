@@ -12,11 +12,11 @@
 
 [![NPM](https://nodei.co/npm/tektrans-logger.png)](https://nodei.co/npm/tektrans-logger/)
 
-
 ## Overview
 A wrapper of [winston](https://github.com/winstonjs/winston) logger.
 
-This logger should be used by [TEKTRANS](https://tektrans.id) projects,
+This logger should be used by [TEKTRANS](https://tektrans.id) projects
+(ofcourse you can use it too),
 replacing [KOMODO-SDK](https://gitlab.kodesumber.com/komodo/komodo-sdk) logger.
 
 ## Features
@@ -85,6 +85,11 @@ Here is the list:
 
 ## Changelog
 See [CHANGELOG.md](./CHANGELOG.md).
+
+## TODO
+* Redis transport.
+* Circular buffer transport.
+* Config file integration.
 
 ## License
 Licensed under MIT License. So, feel free to use it if you think it would be
