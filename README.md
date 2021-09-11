@@ -28,7 +28,7 @@ replacing [KOMODO-SDK](https://gitlab.kodesumber.com/komodo/komodo-sdk) logger.
 npm i tektrans-logger
 ```
 
-## Usages
+## Usage
 ```javascript
 const logger = require('tektrans-logger');
 
@@ -42,6 +42,8 @@ logger.warn('A warn message', {
     eCode: e.code, eMessage: e.message
 });
 ```
+
+See [here](./examples) for more examples.
 
 ## Override a behavior
 You can overried behavior by using environment (process.env) or global variable.
