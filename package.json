@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adhisimon/tektrans-logger.git"
+    "url": "git+https://github.com/tektrans/tektrans-logger.git"
   },
   "keywords": [
     "tektrans",
