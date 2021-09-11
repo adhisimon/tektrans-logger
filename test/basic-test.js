@@ -2,6 +2,7 @@
 
 const path = require('path');
 
+global.TEKTRANS_LOGGER_LEVEL = 'error';
 global.TEKTRANS_LOGGER_DIRECTORY = path.join(__dirname, 'logs');
 
 require('should');
