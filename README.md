@@ -1,4 +1,4 @@
-# tektrans-logger
+# ![tektrans-logger](./arts/github-tektrans-logger-social-banner-no-badges.jpg)
 
 [![Version npm](https://img.shields.io/npm/v/tektrans-logger.svg?style=for-the-badge)](https://www.npmjs.com/package/tektrans-logger)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
