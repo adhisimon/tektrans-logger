@@ -8,7 +8,7 @@
 [![NodeJS](https://img.shields.io/badge/TEKTRANS-maroon?style=for-the-badge)](https://tektrans.id)
 
 [![Version npm](https://badge.fury.io/js/tektrans-logger.svg)](https://www.npmjs.com/package/tektrans-logger)
-[![Dependency Status](https://david-dm.org/adhisimon/tektrans-logger.svg?theme=shields.io)](https://david-dm.org/adhisimon/tektrans-logger)
+[![Dependency Status](https://david-dm.org/tektrans/tektrans-logger.svg?theme=shields.io)](https://david-dm.org/tektrans/tektrans-logger)
 
 [![NPM](https://nodei.co/npm/tektrans-logger.png)](https://nodei.co/npm/tektrans-logger/)
 
