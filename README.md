@@ -1,20 +1,19 @@
 # ![tektrans-logger](./arts/github-tektrans-logger-social-banner-no-badges.jpg)
 
-[![Version npm](https://img.shields.io/npm/v/tektrans-logger.svg?style=for-the-badge)](https://www.npmjs.com/package/tektrans-logger)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org)
 [![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)](https://eslint.org)
 [![NodeJS](https://img.shields.io/badge/WINSTON-gray?style=for-the-badge)](https://github.com/winstonjs/winston)
 [![NodeJS](https://img.shields.io/badge/TEKTRANS-maroon?style=for-the-badge)](https://tektrans.id)
 
-[![Version npm](https://badge.fury.io/js/tektrans-logger.svg)](https://www.npmjs.com/package/tektrans-logger)
+[![Version npm](https://img.shields.io/npm/v/tektrans-logger.svg)](https://www.npmjs.com/package/tektrans-logger)
 [![Dependency Status](https://david-dm.org/tektrans/tektrans-logger.svg?theme=shields.io)](https://david-dm.org/tektrans/tektrans-logger)
 
 [![NPM](https://nodei.co/npm/tektrans-logger.png)](https://nodei.co/npm/tektrans-logger/)
 
 ## Overview
 A wrapper of [winston](https://github.com/winstonjs/winston) logger,
-replacing [KOMODO-SDK (DEPRECATED)](https://gitlab.kodesumber.com/komodo/komodo-sdk) logger.
+replacing deprecated [KOMODO-SDK](https://gitlab.kodesumber.com/komodo/komodo-sdk) logger.
 
 This logger should be used by [TEKTRANS](https://tektrans.id) projects.
 But ofcourse you can use it too.
@@ -54,8 +53,8 @@ See [here](./examples) for more examples.
 ## Override a behavior
 You can overried behavior by using environment (process.env) or global variable
 or by specified in config object.
-Remember to put those override statement before any "require('tektrans-logger')"
-statement.
+Remember to put those override statement before first call of
+"require('tektrans-logger')" statement.
 
 Here is the list:
 * **TEKTRANS_LOGGER_CONFIG**: config object
@@ -131,4 +130,4 @@ if you think it would be usefull for you.
 
 Copyright [PT. TEKNOLOGI TRANSAKSI DIGITAL (TEKTRANS)](https://tektrans.id) 2021.
 
-[![TEKTRANS](https://siasky.net/EAAT1BDJvgK2jNkoNVbl0PwTYrRrNjhWiRWycnhp_Cnmbg)](https://tektrans.id)
+[![TEKTRANS](https://siasky.net/CABQGdV6AnZih995X3er5uLei05jmj9gOgnCoPV2PdnQBw)](https://tektrans.id)
