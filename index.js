@@ -6,6 +6,17 @@ const winston = require('winston');
 
 require('winston-daily-rotate-file');
 
+const loggerConfig = (typeof global.TEKTRANS_LOGGER_CONFIG && global.TEKTRANS_LOGGER_CONFIG)
+    || {
+        level: 'verbose',
+        label: null,
+        directory: path.join(process.cwd(), 'logs'),
+        filename: 'log',
+        console_level: null,
+        file_level: null,
+        max_files: null,
+    };
+
 const isInTest = require('./lib/is-in-test');
 
 const level = null
@@ -13,13 +24,13 @@ const level = null
     || process.env.LOGLEVEL
     || global.TEKTRANS_LOGGER_LEVEL
     || global.LOGLEVEL
-    || 'verbose';
+    || loggerConfig.level;
 
-const label = null
-    || process.env.TEKTRANS_LOGGER_LABEL
+const label = process.env.TEKTRANS_LOGGER_LABEL
     || process.env.KOMODO_LOG_LABEL
     || global.TEKTRANS_LOGGER_LABEL
-    || global.KOMODO_LOG_LABEL;
+    || global.KOMODO_LOG_LABEL
+    || loggerConfig.label;
 
 const isUsingFile = !global.TEKTRANS_LOGGER_DO_NOT_USING_FILE
     && !process.env.TEKTRANS_LOGGER_DO_NOT_USING_FILE
@@ -29,32 +40,35 @@ const isUsingFile = !global.TEKTRANS_LOGGER_DO_NOT_USING_FILE
         || !!process.env.TEKTRANS_LOGGER_USING_FILE
     );
 
-const logDir = global.TEKTRANS_LOGGER_DIRECTORY || path.join(
-    process.cwd(),
-    '/logs',
-);
+const logDir = global.TEKTRANS_LOGGER_DIRECTORY
+    || loggerConfig.directory;
 
 const filenamePrefix = null
     || process.env.TEKTRANS_LOGGER_FILENAME
     || process.env.KOMODO_LOG_FILENAME
     || global.TEKTRANS_LOGGER_FILENAME
     || global.KOMODO_LOG_FILENAME
-    || 'log';
+    || loggerConfig.filename;
 
 const maxFiles = process.env.TEKTRANS_LOGGER_MAX_FILES
     || global.TEKTRANS_LOGGER_MAX_FILES
-    || null;
-
-if (isUsingFile && !fs.existsSync(logDir)) {
-    fs.mkdirSync(logDir, { recursive: true });
-}
-
-const transports = ['Console'];
+    || loggerConfig.max_files;
 
 const consoleLevel = null
     || process.env.TEKTRANS_LOGGER_CONSOLE_LEVEL
     || global.TEKTRANS_LOGGER_CONSOLE_LEVEL
+    || loggerConfig.console_level
     || level;
+
+const dailyRotateFileLevel = isUsingFile && (
+    null
+    || process.env.TEKTRANS_LOGGER_FILE_LEVEL
+    || global.TEKTRANS_LOGGER_FILE_LEVEL
+    || loggerConfig.file_level
+    || level
+);
+
+const transports = ['Console'];
 
 const logger = winston.createLogger({
     transports: [
@@ -82,14 +96,11 @@ const logger = winston.createLogger({
     ],
 });
 
-const dailyRotateFileLevel = isUsingFile && (
-    null
-    || process.env.TEKTRANS_LOGGER_FILE_LEVEL
-    || global.TEKTRANS_LOGGER_FILE_LEVEL
-    || level
-);
-
 if (isUsingFile) {
+    if (!fs.existsSync(logDir)) {
+        fs.mkdirSync(logDir, { recursive: true });
+    }
+
     transports.push('DailyRotateFile');
 
     const transport = new winston.transports.DailyRotateFile({

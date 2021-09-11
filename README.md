@@ -51,17 +51,21 @@ logger.warn('A warn message', {
 See [here](./examples) for more examples.
 
 ## Override a behavior
-You can overried behavior by using environment (process.env) or global variable.
+You can overried behavior by using environment (process.env) or global variable
+or by specified in config object.
 Remember to put those override statement before any "require('tektrans-logger')"
 statement.
 
 Here is the list:
+* **TEKTRANS_LOGGER_CONFIG**: config object
 * **TEKTRANS_LOGGER_LEVEL**: minimum log level to dump
   * default: "verbose. "
   * alias: LOGLEVEL
+  * config property: config.level
 * **TEKTRANS_LOGGER_LABEL**: log label
   * default: null (nothing)
   * alias: KOMODO_LOG_LABEL
+  * config property: config.label
 * **TEKTRANS_LOGGER_DO_NOT_USING_FILE**: set it to any value to make logger without
   using file transport
   * default: null
@@ -70,26 +74,51 @@ Here is the list:
   * default: null
 * **TEKTRANS_LOGGER_DIRECTORY**: directory to put log files
   * default: 'logs' directory on working directory
+  * config property: config.directory
 * **TEKTRANS_LOGGER_FILENAME**: base filename for log file
   * default: 'log'
   * alias: KOMODO_LOG_FILENAME
+  * config property: config.filename
 * **TEKTRANS_LOGGER_CONSOLE_LEVEL**: minimum log level to dump using Console transport
   * default: same as TEKTRANS_LOGGER_LEVEL
+  * config property: config.console_level
 * **TEKTRANS_LOGGER_FILE_LEVEL**: minimum log level to dump using file transport
   * default: same as TEKTRANS_LOGGER_LEVEL
+  * config property: config.file_level
 * **TEKTRANS_LOGGER_MAX_FILES**: maximum number of log files to keep.
   If not set, no logs will be removed. This can be a number of files or number of days.
   If using days, add 'd' as the suffix.
   See [DailyRotateFile](https://github.com/winstonjs/winston-daily-rotate-file#options)
   * default: null
+  * config property: config.max_files
 
+## Config default object
+```javascript
+{
+  level: 'verbose',
+  label: null,
+
+  // default is "logs" directory on current workdir
+  directory: path.join(process.cwd(), 'logs'),
+  
+  filename: 'log',
+
+  // default is using generic level value
+  console_level: null,
+
+  // default is using generic level value
+  file_level: null,
+
+  // default is no old file removal
+  max_files: null,
+}
+```
 ## Changelog
 See [CHANGELOG.md](./CHANGELOG.md).
 
 ## TODO
 * Redis transport.
 * Circular buffer transport.
-* Config file integration.
 
 ## License
 Licensed under MIT License. So, feel free to use it if you think it would be
