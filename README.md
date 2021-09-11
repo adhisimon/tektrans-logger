@@ -24,7 +24,7 @@ replacing [KOMODO-SDK](https://gitlab.kodesumber.com/komodo/komodo-sdk) logger.
 * Ability to change log base filename.
 
 ## Install
-```
+```bash
 npm i tektrans-logger
 ```
 
