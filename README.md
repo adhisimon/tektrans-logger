@@ -130,4 +130,4 @@ usefull for you.
 
 Copyright [PT. TEKNOLOGI TRANSAKSI DIGITAL (TEKTRANS)](https://tektrans.id) 2021.
 
-![](https://siasky.net/EAAT1BDJvgK2jNkoNVbl0PwTYrRrNjhWiRWycnhp_Cnmbg)
+[![TEKTRANS](https://siasky.net/EAAT1BDJvgK2jNkoNVbl0PwTYrRrNjhWiRWycnhp_Cnmbg)](https://tektrans.id)
