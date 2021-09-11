@@ -34,3 +34,14 @@ logger.warn('A warn message', {
     eCode: e.code, eMessage: e.message
 });
 ```
+
+## Changelog
+See [CHANGELOG.md](https://github.com/tektrans/tektrans-logger/blob/main/CHANGELOG.md).
+
+## License
+Licensed under MIT License. So, feel free to use it if you think it would be
+usefull for you.
+
+Copyright TEKTRANS 2021.
+
+http://tektrans.id/
