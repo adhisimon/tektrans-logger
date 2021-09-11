@@ -50,8 +50,8 @@ logger.warn('A warn message', {
 
 See [here](./examples) for more examples.
 
-## Override a behavior
-You can overried behavior by using environment (process.env) or global variable
+## Behaviors
+You can override behavior by using environment (process.env) or global variable
 or by specified in config object.
 Remember to put those override statement before first call of
 "require('tektrans-logger')" statement.
