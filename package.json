@@ -1,5 +1,5 @@
 {
-  "name": "@tektrans/tektrans-logger",
+  "name": "tektrans-logger",
   "version": "1.0.3",
   "description": "Tektrans Logger, a wrapper of Winston logger",
   "main": "index.js",
