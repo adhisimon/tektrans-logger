@@ -1,12 +1,12 @@
 # tektrans-logger
 
+[![Version npm](https://img.shields.io/npm/v/tektrans-logger.svg?style=for-the-badge)](https://www.npmjs.com/package/tektrans-logger)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org)
+[![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)](https://eslint.org)
+[![NodeJS](https://img.shields.io/badge/WINSTON-gray?style=for-the-badge)](https://github.com/winstonjs/winston)
+[![NodeJS](https://img.shields.io/badge/TEKTRANS-maroon?style=for-the-badge)](https://tektrans.id)
 
-![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
-![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
-![NodeJS](https://img.shields.io/badge/TEKTRANS-maroon?style=for-the-badge)
-![NodeJS](https://img.shields.io/badge/WINSTON-gray?style=for-the-badge)
-
-[![Version npm](https://img.shields.io/npm/v/tektrans-logger.svg?style=flat-square)](https://www.npmjs.com/package/tektrans-logger)
 
 ## Overview
 A wrapper of [winston](https://github.com/winstonjs/winston) logger.
@@ -15,9 +15,9 @@ This logger should be used by [TEKTRANS](https://tektrans.id) projects,
 replacing [KOMODO-SDK](https://gitlab.kodesumber.com/komodo/komodo-sdk) logger.
 
 ## Features
-* Create paralel transports:
+* Create multiple transports automatically:
   * Console
-  * File (DailyRotateFile)
+  * File ([DailyRotateFile](https://github.com/winstonjs/winston-daily-rotate-file))
 * Not creating DailyRotateFile transport if test environtment detected.
   This is the most reason we need a simple wrapper for winston logger.
 * Ability to change log directory.
