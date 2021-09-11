@@ -13,11 +13,12 @@
 [![NPM](https://nodei.co/npm/tektrans-logger.png)](https://nodei.co/npm/tektrans-logger/)
 
 ## Overview
-A wrapper of [winston](https://github.com/winstonjs/winston) logger.
+A wrapper of [winston](https://github.com/winstonjs/winston) logger,
+replacing [KOMODO-SDK (DEPRECATED)](https://gitlab.kodesumber.com/komodo/komodo-sdk) logger.
 
-This logger should be used by [TEKTRANS](https://tektrans.id) projects
-(ofcourse you can use it too),
-replacing [KOMODO-SDK](https://gitlab.kodesumber.com/komodo/komodo-sdk) logger.
+This logger should be used by [TEKTRANS](https://tektrans.id) projects.
+But ofcourse you can use it too.
+
 
 ## Features
 * Create multiple transports automatically:
@@ -125,8 +126,8 @@ See [CHANGELOG.md](./CHANGELOG.md).
 * Circular buffer transport.
 
 ## License
-Licensed under MIT License. So, feel free to use it if you think it would be
-usefull for you.
+Licensed under MIT License. So, feel free to use or fork it
+if you think it would be usefull for you.
 
 Copyright [PT. TEKNOLOGI TRANSAKSI DIGITAL (TEKTRANS)](https://tektrans.id) 2021.
 
