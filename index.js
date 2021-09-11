@@ -15,7 +15,11 @@ const level = null
     || global.LOGLEVEL
     || 'verbose';
 
-const label = global.KOMODO_LOG_LABEL || null;
+const label = null
+    || process.env.TEKTRANS_LOGGER_LABEL
+    || process.env.KOMODO_LOG_LABEL
+    || global.TEKTRANS_LOGGER_LABEL
+    || global.KOMODO_LOG_LABEL;
 
 const isUsingFile = !global.TEKTRANS_LOGGER_DO_NOT_USING_FILE
     && !process.env.TEKTRANS_LOGGER_DO_NOT_USING_FILE
