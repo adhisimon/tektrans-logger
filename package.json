@@ -12,9 +12,6 @@
     "type": "git",
     "url": "git+https://github.com/tektrans/tektrans-logger.git"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "keywords": [
     "tektrans",
     "logger",
