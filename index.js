@@ -41,6 +41,10 @@ const filenamePrefix = null
     || global.KOMODO_LOG_FILENAME
     || 'log';
 
+const maxFiles = process.env.TEKTRANS_LOGGER_MAX_FILES
+    || global.TEKTRANS_LOGGER_MAX_FILES
+    || null;
+
 if (isUsingFile && !fs.existsSync(logDir)) {
     fs.mkdirSync(logDir, { recursive: true });
 }
@@ -93,13 +97,15 @@ if (isUsingFile) {
         filename: `${filenamePrefix}.%DATE%`,
         dirname: logDir,
         datePattern: 'YYYY-MM-DD',
+        maxFiles,
+        createSymlink: true,
+        symlinkName: `${filenamePrefix}.current`,
         format: winston.format.combine(
             winston.format.metadata(),
             winston.format.label({ label: `${label || ''}[${process.pid}]`, message: false }),
             winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss.SSS' }),
             winston.format.json(),
         ),
-
     });
     logger.add(transport);
 }

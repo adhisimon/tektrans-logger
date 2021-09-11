@@ -51,27 +51,32 @@ Remember to put those override statement before any "require('tektrans-logger')"
 statement.
 
 Here is the list:
-* TEKTRANS_LOGGER_LEVEL: minimum log level to dump
+* **TEKTRANS_LOGGER_LEVEL**: minimum log level to dump
   * default: "verbose. "
   * alias: LOGLEVEL
-* TEKTRANS_LOGGER_LABEL: log label
+* **TEKTRANS_LOGGER_LABEL**: log label
   * default: null (nothing)
   * alias: KOMODO_LOG_LABEL
-* TEKTRANS_LOGGER_DO_NOT_USING_FILE: set it to any value to make logger without
+* **TEKTRANS_LOGGER_DO_NOT_USING_FILE**: set it to any value to make logger without
   using file transport
   * default: null
-* TEKTRANS_LOGGER_USING_FILE: set it to force using file transport even if it
+* **TEKTRANS_LOGGER_USING_FILE**: set it to force using file transport even if it
   was called from test environtment
   * default: null
-* TEKTRANS_LOGGER_DIRECTORY: directory to put log files
+* **TEKTRANS_LOGGER_DIRECTORY**: directory to put log files
   * default: 'logs' directory on working directory
-* TEKTRANS_LOGGER_FILENAME: base filename for log file
+* **TEKTRANS_LOGGER_FILENAME**: base filename for log file
   * default: 'log'
   * alias: KOMODO_LOG_FILENAME
-* TEKTRANS_LOGGER_CONSOLE_LEVEL: minimum log level to dump using Console transport
+* **TEKTRANS_LOGGER_CONSOLE_LEVEL**: minimum log level to dump using Console transport
   * default: same as TEKTRANS_LOGGER_LEVEL
-* TEKTRANS_LOGGER_FILE_LEVEL: minimum log level to dump using file transport
+* **TEKTRANS_LOGGER_FILE_LEVEL**: minimum log level to dump using file transport
   * default: same as TEKTRANS_LOGGER_LEVEL
+* **TEKTRANS_LOGGER_MAX_FILES**: maximum number of log files to keep.
+  If not set, no logs will be removed. This can be a number of files or number of days.
+  If using days, add 'd' as the suffix.
+  See [DailyRotateFile](https://github.com/winstonjs/winston-daily-rotate-file#options)
+  * default: null
 
 ## Changelog
 See [CHANGELOG.md](./CHANGELOG.md).
