@@ -129,3 +129,5 @@ Licensed under MIT License. So, feel free to use it if you think it would be
 usefull for you.
 
 Copyright [PT. TEKNOLOGI TRANSAKSI DIGITAL (TEKTRANS)](https://tektrans.id) 2021.
+
+![](https://siasky.net/EAAT1BDJvgK2jNkoNVbl0PwTYrRrNjhWiRWycnhp_Cnmbg)
