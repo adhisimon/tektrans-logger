@@ -18,7 +18,7 @@ replacing [KOMODO-SDK](https://gitlab.kodesumber.com/komodo/komodo-sdk) logger.
 * Create multiple transports automatically:
   * Console
   * File ([DailyRotateFile](https://github.com/winstonjs/winston-daily-rotate-file))
-* Not creating DailyRotateFile transport if test environtment detected.
+* Not creating DailyRotateFile transport if test environment detected.
   This is the most reason we need a simple wrapper for winston logger.
 * Ability to change log directory.
 * Ability to change log base filename.
