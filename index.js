@@ -57,12 +57,21 @@ const logger = winston.createLogger({
         new winston.transports.Console({
             level: consoleLevel,
             format: winston.format.combine(
-                winston.format.colorize(),
                 winston.format.metadata(),
                 winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss.SSS' }),
-                winston.format.label({ label, message: false }),
+                winston.format.label({
+                    label: process.stdout.isTTY ? `${label || ''}[${process.pid}]` : label,
+                    message: false,
+                }),
+                winston.format.colorize(),
                 winston.format.printf(
-                    (info) => `${process.stdout.isTTY ? info.timestamp : ''}${info.label ? ` ${info.label}:` : ''} ${info.level}: ${info.message} ${info.metadata && Object.keys(info.metadata).length ? JSON.stringify(info.metadata) : ''}`.trim(),
+                    (info) => [
+                        process.stdout.isTTY ? info.timestamp : '',
+                        info.label ? `${info.label}:` : '',
+                        `${info.level}:`,
+                        info.message || '',
+                        info.metadata && Object.keys(info.metadata).length ? JSON.stringify(info.metadata) : '',
+                    ].filter((item) => item).join(' ').trim(),
                 ),
             ),
         }),
@@ -86,7 +95,7 @@ if (isUsingFile) {
         datePattern: 'YYYY-MM-DD',
         format: winston.format.combine(
             winston.format.metadata(),
-            winston.format.label({ label, message: false }),
+            winston.format.label({ label: `${label || ''}[${process.pid}]`, message: false }),
             winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss.SSS' }),
             winston.format.json(),
         ),
