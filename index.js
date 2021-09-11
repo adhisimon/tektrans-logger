@@ -57,6 +57,7 @@ const logger = winston.createLogger({
         new winston.transports.Console({
             level: consoleLevel,
             format: winston.format.combine(
+                winston.format.colorize(),
                 winston.format.metadata(),
                 winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss.SSS' }),
                 winston.format.label({ label, message: false }),
