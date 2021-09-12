@@ -42,8 +42,6 @@ const main = async () => {
     logger.debug('This is a debug log.');
     logger.verbose('This is a verbose log');
 
-    // looks like redis transport doesn't support log with metadata,
-    // log with metadata will be skipped by redis transport
     logger.verbose('This is a verbose example of log with metadata', {
         a: 'metadata1',
         b: 'metadata2',
