@@ -20,15 +20,14 @@ But ofcourse you can use it too.
 
 
 ## Features
-* Create multiple transports automatically:
+* Create multiple transports automatically by default:
   * Console
   * File ([DailyRotateFile](https://github.com/winstonjs/winston-daily-rotate-file))
 * Not creating DailyRotateFile transport if test environment detected.
   This is the most reason we need a simple wrapper for winston logger.
 * Ability to change log directory.
 * Ability to change log base filename.
-* Ability to publush to redis channel ([winston-redis](https://github.com/winstonjs/winston-redis)) - **experimental**
-  See [examples/redis.js](./examples/redis.js) for code example.
+* [Ability to publish to redis channel](#experimental-redis-transport) ([winston-redis](https://github.com/winstonjs/winston-redis)) - **experimental**
 
 ## Future features
 * Circular buffer transport.
@@ -121,6 +120,48 @@ Here is the list:
 
 See [examples/using-config.js](./examples/using-config.js) for
 usage example of using config object.
+
+## Experimental Redis transport
+Redis transport can be enabled by putting "redis" property on config object.
+
+This config object will use default options for redis transport:
+```javascript
+{
+  ...
+  redis: true
+}
+```
+
+This will specify some property of redis transport: 
+```javascript
+{
+  ...
+  redis: {
+    level: 'verbose',
+    host: 'localhost',
+    port: 6379,
+    auth: null,
+    channel: null,
+    meta: null,
+  }
+  ...
+}
+```
+### Default value of Redis transport
+* level: same as general level value
+* host: 'localhost'
+* port: 6379
+* auth: null, no authentication
+* channel: "TEKTRANS-LOGGER_B707E453_<LOG-LABEL-IN-UPPERCASE_IF-SPECIFIED>,".
+  For example if you specify log label as "xyz", channel will be
+  "TEKTRANS-LOGGER_B707E453_XYZ".
+  If you don't specify log label, channel name will be
+  "TEKTRANS-LOGGER_B707E453".
+
+It will automatically inject process id (process.pid) to config.redis.meta.pid
+if you don't specify it.
+
+See [examples/redis.js](./examples/redis.js) for code example.
 
 ## Changelog
 See [CHANGELOG.md](./CHANGELOG.md).
