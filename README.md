@@ -127,7 +127,7 @@ Redis transport can be enabled by putting "redis" property on config object.
 This config object will use default options for redis transport:
 ```javascript
 {
-  ...
+  // ...
   redis: true
 }
 ```
@@ -135,7 +135,7 @@ This config object will use default options for redis transport:
 This will specify some property of redis transport: 
 ```javascript
 {
-  ...
+  // ...
   redis: {
     level: 'verbose',
     host: 'localhost',
@@ -144,7 +144,6 @@ This will specify some property of redis transport:
     channel: null,
     meta: null,
   }
-  ...
 }
 ```
 ### Default value of Redis transport
