@@ -1,7 +1,6 @@
 const MODULE_NAME = 'TEKTRANS-LOGGER';
 
 const winston = require('winston');
-require('winston-daily-rotate-file');
 
 const config = require('./lib/config');
 
