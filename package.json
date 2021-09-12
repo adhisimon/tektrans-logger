@@ -34,6 +34,7 @@
   "dependencies": {
     "mkdirp": "^1.0.4",
     "winston": "^3.3.3",
-    "winston-daily-rotate-file": "^4.5.5"
+    "winston-daily-rotate-file": "^4.5.5",
+    "winston-redis": "^3.1.0"
   }
 }
