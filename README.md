@@ -11,7 +11,7 @@
 
 [![NPM](https://nodei.co/npm/tektrans-logger.png)](https://nodei.co/npm/tektrans-logger/)
 
-A wrapper of [winston](https://github.com/winstonjs/winston) logger,
+A wrapper of [winstonjs](https://github.com/winstonjs/winston) logger,
 replacing deprecated logger from [KOMODO-SDK](https://gitlab.kodesumber.com/komodo/komodo-sdk).
 
 This logger should be used by [TEKTRANS](https://tektrans.id) projects.
@@ -36,7 +36,7 @@ But ofcourse you can use it too.
   * Console
   * File ([DailyRotateFile](https://github.com/winstonjs/winston-daily-rotate-file))
 * Not creating DailyRotateFile transport if test environment detected.
-  This is the most reason we need a simple wrapper for winston logger.
+  This is the most reason we need a simple wrapper for winstonjs logger.
 * Ability to change log directory.
 * Ability to change log base filename.
 * [Ability to publish to redis channel](#experimental-redis-transport)
