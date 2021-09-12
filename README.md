@@ -160,7 +160,6 @@ This will specify some property of redis transport:
     port: 6379,
     auth: null,
     channel: null,
-    meta: null,
   }
 }
 ```
