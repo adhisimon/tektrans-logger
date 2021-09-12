@@ -63,7 +63,7 @@ Here is the list:
   * alias: LOGLEVEL
   * config property: config.level
 * **TEKTRANS_LOGGER_LABEL**: log label
-  * default: null (nothing)
+  * default: "" (empty string)
   * alias: KOMODO_LOG_LABEL
   * config property: config.label
 * **TEKTRANS_LOGGER_DO_NOT_USING_FILE**: set it to any value to make logger without
