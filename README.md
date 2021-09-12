@@ -27,6 +27,11 @@ But ofcourse you can use it too.
   This is the most reason we need a simple wrapper for winston logger.
 * Ability to change log directory.
 * Ability to change log base filename.
+* Ability to publush to redis channel ([winston-redis](https://github.com/winstonjs/winston-redis)) - **experimental**
+  See [examples/redis.js](./examples/redis.js) for code example.
+
+## Future features
+* Circular buffer transport.
 
 ## Install
 ```bash
@@ -119,10 +124,6 @@ usage example of using config object.
 
 ## Changelog
 See [CHANGELOG.md](./CHANGELOG.md).
-
-## TODO
-* Redis transport.
-* Circular buffer transport.
 
 ## License
 Licensed under MIT License. So, feel free to use or fork it
