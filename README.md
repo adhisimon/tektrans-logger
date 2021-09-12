@@ -166,7 +166,10 @@ See [examples/redis.js](./examples/redis.js) for code example.
 See [CHANGELOG.md](./CHANGELOG.md).
 
 ## License
-Licensed under MIT License. So, feel free to use or fork it
+Licensed under MIT License
+([see this file](./LICENSE)).
+
+Feel free to use or fork it
 if you think it would be usefull for you.
 
 Copyright [PT. TEKNOLOGI TRANSAKSI DIGITAL (TEKTRANS)](https://tektrans.id) 2021.
