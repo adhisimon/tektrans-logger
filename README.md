@@ -13,7 +13,7 @@
 
 ## Overview
 A wrapper of [winston](https://github.com/winstonjs/winston) logger,
-replacing deprecated [KOMODO-SDK](https://gitlab.kodesumber.com/komodo/komodo-sdk) logger.
+replacing deprecated logger from [KOMODO-SDK](https://gitlab.kodesumber.com/komodo/komodo-sdk).
 
 This logger should be used by [TEKTRANS](https://tektrans.id) projects.
 But ofcourse you can use it too.
@@ -38,6 +38,9 @@ npm i tektrans-logger
 ```
 
 ## Usage
+Using tektrans-logger is easy.
+Just include the module and you can use it with default behaviors.
+
 ```javascript
 const logger = require('tektrans-logger');
 
