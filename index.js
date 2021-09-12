@@ -12,6 +12,9 @@ const redisTransport = require('./lib/transports/redis');
 const transports = ['Console'];
 
 const logger = winston.createLogger({
+    defaultMeta: {
+        pid: process.pid,
+    },
     transports: [
         consoleTransport,
     ],

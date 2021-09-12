@@ -158,9 +158,6 @@ This will specify some property of redis transport:
   If you don't specify log label, channel name will be
   "TEKTRANS-LOGGER_B707E453".
 
-It will automatically inject process id (process.pid) to config.redis.meta.pid
-if you don't specify it.
-
 See [examples/redis.js](./examples/redis.js) for code example.
 
 ## Changelog
