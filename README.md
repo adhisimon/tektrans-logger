@@ -1,4 +1,4 @@
-# ![tektrans-logger](https://raw.githubusercontent.com/tektrans/tektrans-arts/main/projects/tektrans-logger/github-tektrans-logger-social-banner-no-badges.jpg)
+![tektrans-logger](https://raw.githubusercontent.com/tektrans/tektrans-arts/main/projects/tektrans-logger/github-tektrans-logger-social-banner-no-badges.jpg)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org)
@@ -11,15 +11,27 @@
 
 [![NPM](https://nodei.co/npm/tektrans-logger.png)](https://nodei.co/npm/tektrans-logger/)
 
-## Overview
 A wrapper of [winston](https://github.com/winstonjs/winston) logger,
 replacing deprecated logger from [KOMODO-SDK](https://gitlab.kodesumber.com/komodo/komodo-sdk).
 
 This logger should be used by [TEKTRANS](https://tektrans.id) projects.
 But ofcourse you can use it too.
 
+# Table of contents
+- [Table of contents](#table-of-contents)
+- [Features](#features)
+- [Future features](#future-features)
+- [Install](#install)
+- [Usage](#usage)
+- [Behaviors](#behaviors)
+- [Config default object](#config-default-object)
+- [Experimental Redis transport](#experimental-redis-transport)
+  - [Default value of Redis transport](#default-value-of-redis-transport)
+  - [Caution](#caution)
+- [Changelog](#changelog)
+- [License](#license)
 
-## Features
+# Features
 * Create multiple transports automatically by default:
   * Console
   * File ([DailyRotateFile](https://github.com/winstonjs/winston-daily-rotate-file))
@@ -27,17 +39,20 @@ But ofcourse you can use it too.
   This is the most reason we need a simple wrapper for winston logger.
 * Ability to change log directory.
 * Ability to change log base filename.
-* [Ability to publish to redis channel](#experimental-redis-transport) ([winston-redis](https://github.com/winstonjs/winston-redis)) - **experimental**
+* [Ability to publish to redis channel](#experimental-redis-transport)
+  (implemented using [winston-redis](https://github.com/winstonjs/winston-redis)) - **experimental** (v1.2.0)
 
-## Future features
+# Future features
 * Circular buffer transport.
+* MySQL transport (planned for v1.3.0).
+* MongoDB transport.
 
-## Install
+# Install
 ```bash
 npm i tektrans-logger
 ```
 
-## Usage
+# Usage
 Using tektrans-logger is easy.
 Just include the module and you can use it with default behaviors.
 
@@ -57,7 +72,7 @@ logger.warn('A warn message', {
 
 See [here](./examples) for more examples.
 
-## Behaviors
+# Behaviors
 You can override behavior by using environment (process.env) or global variable
 or by specified in config object.
 Remember to put those override statement before first call of
@@ -99,7 +114,7 @@ Here is the list:
   * default: null
   * config property: config.max_files
 
-## Config default object
+# Config default object
 ```javascript
 {
   level: 'verbose',
@@ -124,7 +139,7 @@ Here is the list:
 See [examples/using-config.js](./examples/using-config.js) for
 usage example of using config object.
 
-## Experimental Redis transport
+# Experimental Redis transport
 Redis transport can be enabled by putting "redis" property on config object.
 
 This config object will use default options for redis transport:
@@ -149,7 +164,7 @@ This will specify some property of redis transport:
   }
 }
 ```
-### Default value of Redis transport
+## Default value of Redis transport
 * level: same as general level value
 * host: 'localhost'
 * port: 6379
@@ -162,10 +177,16 @@ This will specify some property of redis transport:
 
 See [examples/redis.js](./examples/redis.js) for code example.
 
-## Changelog
+## Caution
+Looks like **logger.end()** will not wait for all logs to be flushed on redis.
+Expect for missing some of last logs on redis.
+Or you can put some delay (like 1-2 seconds) before closing the logger
+with **end** method.
+
+# Changelog
 See [CHANGELOG.md](./CHANGELOG.md).
 
-## License
+# License
 Licensed under MIT License
 ([see this file](./LICENSE)).
 
