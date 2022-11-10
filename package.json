@@ -1,6 +1,6 @@
 {
   "name": "tektrans-logger",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "Tektrans Logger, a wrapper of Winston logger",
   "main": "index.js",
   "scripts": {
