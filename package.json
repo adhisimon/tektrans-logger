@@ -33,7 +33,6 @@
   },
   "dependencies": {
     "@codibre/winston-redis": "^3.1.1",
-    "mkdirp": "^1.0.4",
     "winston": "^3.8.2",
     "winston-daily-rotate-file": "^4.7.1"
   }
